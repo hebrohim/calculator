@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <style>
+
+        body{
+          
+            background:linear-gradient(to right, linen,rgba(128, 0, 0, 0.514),linen);
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+       .cointainer{
+            width: 25%;
+            background-color:maroon;
+            margin:auto; 
+            border-radius:30px;
+            padding: 50px 0px;
+            box-sizing: border-box;
+
+            
+        }
+
+        .body{
+            width: 95%;
+            height:500px;
+            background-color:rgba(138, 125, 125, 0.432);
+            margin:auto;
+            
+            
+          
+            
+        }
+
+        .up{
+            padding: 0  140px 20px 140px;
+            width: 20%;
+
+            
+        }
+
+
+
+        #speaker{
+           background-color: rgba(204, 204, 204, 0.356);
+            width:55px;
+            height:5px;
+            border-radius: 5px;
+            float: right;
+            margin: 3px 0px 10px 0px;
+            
+            
+        }
+        #camera{
+             background-color: rgba(204, 204, 204, 0.356);
+            width:8px;
+            height:8px;
+            border-radius:90px;
+            float: left;
+            margin: 2px 0px 100px 0px;
+        }
+
+        #computation{
+            background-color:rgba(128, 0, 0, 0.253);
+            height: 30px;
+            color:linen;
+            font-size: 1.5em;
+            text-align:right;
+
+        }
+
+        #scr{
+            background-color:rgba(128, 0, 0, 0.253);
+            height: 70px;
+            color: linen;
+            font-size: 3em;
+            
+        }
+
+        .button{
+            width: 100%;
+           float: left;
+           
+
+        }
+       table td{
+             
+            padding: 30px 20px 0px 20px;
+        }
+        button{
+            width: 40px;
+            height: 40px;
+            background-color: rgba(128, 0, 0, 0.548);
+            border-radius: 15px;
+            cursor: pointer;
+            color: linen;
+            
+            font-family:sans-serif;
+            
+        }
+        button:hover{
+            background-color: rgba(128, 0, 0, 0.144);
+            font-weight: bolder;
+        }
+       
+
+
+
+      
+    </style>
+    
+</head>
+<body>
+    <div class="cointainer">
+        <section class="up">
+            <div id = "speaker" ></div>
+            <div id = "camera" ></div>
+
+        </section>
+
+    <div class="body">
+        <div id="computation"></div>
+       <div id="scr"></div>
+
+       <section class="button">
+           <table>
+           <tr>
+               <td><button onclick="clr()">C</button></td>
+               <td><button onclick="clr()">Del</button></td>
+               <td><button onclick="display('%')">%</button></td>
+               <td><button onclick ="display('/')">/</button></td>
+           </tr>
+
+           <tr>
+            <td><button onclick="display(7)">7</button></td>
+            <td><button onclick="display(8)">8</button></td>
+            <td><button onclick="display(9)">9</button></td>
+            <td><button onclick="display('*')">*</button></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="display(4)">4</button></td>
+            <td><button onclick="display(5)">5</button></td>
+            <td><button onclick="display(6)">6</button></td>
+            <td><button onclick="display('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display(1)">1</button></td>
+            <td><button onclick="display(2)">2</button></td>
+            <td><button onclick="display(3)">3</button></td>
+            <td><button onclick="display('-')">-</button></td>
+        </tr>
+        <tr>
+            <td ><button onclick="display(0)">0</button></td>
+            <td><button onclick="display('.')">.</button></td>
+            <td><button onclick="result()">=</button></td>
+            <td><button onclick="display('/')">/</button></td>
+        </tr>
+           </table>
+       </section>
+        
+        
+
+
+    </div>
+</div>
+
+<script> 
+
+    function display(x){
+     computation.innerHTML += x;
+
+        
+    };
+
+    function clr(){
+      computation.innerHTML = " ";
+      scr.innerHTML = "  ";
+    };
+
+    function result(){
+       scr.innerHTML = eval(computation.innerHTML);
+        
+    }
+
+
+
+
+</script>
+    
+</body>
+</html>
